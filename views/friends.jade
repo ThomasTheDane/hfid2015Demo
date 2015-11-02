@@ -13,27 +13,28 @@ block content
             tr
                 th Learning Leo
                 th
-                    button#leoMessage.btn.btn-primary.btn-default(type="button" data-toggle="modal" data-target="#messageModal")
-                        a.fa.fa-envelope-o(aria-hidden="true")
+                    button#leoMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
+                        span.fa.fa-envelope(aria-hidden="true")
                     span &nbsp;
-                    button#leoVideo.btn.btn-primary.btn-default(type="button")
-                        a.fa.fa-video-camera
+                    button#leoVideo.btn.btn-primary(type="button")
+                        span.fa.fa-video-camera
             tr
                 th Cultural Carl
                 th
-                    button#carlMessage.btn.btn-primary.btn-default(type="button" data-toggle="modal" data-target="#messageModal")
-                        a.fa.fa-envelope-o(aria-hidden="true")
+                    button#carlMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
+                        span.fa.fa-envelope(aria-hidden="true")
             tr
                 th Philosophical Phoebe
                 th
-                    button#phoebeMessage.btn.btn-primary.btn-default(type="button" data-toggle="modal" data-target="#messageModal")
-                        a.fa.fa-envelope-o(aria-hidden="true")
+                    button#phoebeMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
+                        span.fa.fa-envelope(aria-hidden="true")
                     span &nbsp;
-                    button#phoebeVideo.btn.btn-primary.btn-default(type="button")
-                        a.fa.fa-video-camera
+                    button#phoebeVideo.btn.btn-primary(type="button")
+                        span.fa.fa-video-camera
             tr
                 th
-                    a.glyphicon.glyphicon-plus
+                    button#addFriend.btn.btn-default(type="button")
+                        span.fa.fa-plus-circle
                 th.text-right
 
     div.modal.fade#messageModal(tabindex="-1" role="dialog" aria-labelledby="messageLabel")
