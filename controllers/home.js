@@ -19,3 +19,9 @@ exports.friends = function(req, res){
     title: 'Friends'
   })
 };
+
+exports.postchat = function(req, res){
+  res.render('postchat', {
+    title: 'Post Chat'
+  })
+};

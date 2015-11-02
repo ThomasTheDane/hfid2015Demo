@@ -101,6 +101,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.get('/', homeController.index);
 app.get('/prechat', homeController.prechat);
 app.get('/friends', homeController.friends);
+app.get('/postchat', homeController.postchat);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

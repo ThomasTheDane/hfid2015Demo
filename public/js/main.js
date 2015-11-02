@@ -22,4 +22,4 @@ var bootstrap_alert = function() {
 
 bootstrap_alert.success = function(message) {
     $('#alert_placeholder').html('<div class="alert alert-success"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>');
-}
+};

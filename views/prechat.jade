@@ -6,4 +6,11 @@ block content
   | This is the part with the pre conversation, yay
   br
   script(src='https://apis.google.com/js/platform.js', async='', defer='')
-  .g-hangout(data-render='createhangout')
+  #hangoutContainer
+    .g-hangout(data-render='createhangout' data-invites="[{id: '115912648880937906371', invite_type: 'PROFILE'}]")
+  br
+  a.btn(href='/postChat')
+    | click here when done chatting
+
+
+
