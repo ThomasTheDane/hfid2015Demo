@@ -7,3 +7,15 @@ exports.index = function(req, res) {
     title: 'Home'
   });
 };
+
+exports.prechat = function(req, res) {
+  res.render('prechat', {
+    title: 'Prechat'
+  });
+};
+
+exports.friends = function(req, res){
+  res.render('friends', {
+    title: 'Friends'
+  })
+};
