@@ -2,15 +2,40 @@
    Created by thomasnattestad on 11/2/15.
 extends layout
 block content
+  .row
+    .col-sm-4#prechatUser
+      img#prechatUserImage(src='http://store.metmuseum.org/content/ebiz/themetstore/invt/80010981/80010981_01_l.jpg')
+      h1 Worldly
+      h1 Winston
+      p STUFF ABOUT WINSTON. WOOOOOOO YAYAYAY LOREM AND STUFF, SURE THEM LOREMS ARE SO IMPORTANT. LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM
+    .col-sm-8#peckSection
+      h1 What Pecks Your Interest?
+      .row
+        .col-xs-8#peckTopics
+          h3 What is "me"
+          h3 Morality of trollies
+          h3 Are we alone?
+          h3 Life beyond your body
+          h3 Your alternate reality
+          #hangoutContainer
+            .g-hangout(data-render='createhangout' data-invites="[{id: '115912648880937906371', invite_type: 'PROFILE'}]")
+            script(src='https://apis.google.com/js/platform.js', async='', defer='')
+            br
+            a.btn(href='/postChat')
+              | click here when done chatting
 
-  | This is the part with the pre conversation, yay
+
+        .col-xs-1
+          img.peckBox#peck1
+          img.peckBox#peck2
+          img.peckBox#peck3
+          img.peckBox#peck4
+          img.peckBox#peck5
+
+    br
+
+
   br
-  script(src='https://apis.google.com/js/platform.js', async='', defer='')
-  #hangoutContainer
-    .g-hangout(data-render='createhangout' data-invites="[{id: '115912648880937906371', invite_type: 'PROFILE'}]")
-  br
-  a.btn(href='/postChat')
-    | click here when done chatting
 
 
 
