@@ -12,6 +12,7 @@
 html {
   position: relative;
   min-height: 100%;
+//  border: 1px dashed #000000;
 }
 
 body {
@@ -61,4 +62,34 @@ footer {
 
 .fa {
   margin-right: 6px;
+}
+
+#peckSection{
+  text-align: center;
+}
+
+#prechatUserImage{
+  width: 200px;
+  margin: auto;
+}
+
+#prechatUser{
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+}
+
+#peckTopics{
+  text-align: center;
+}
+
+.peckBox{
+  border: 5px solid #000000;
+  height: 47px;
+  width: 47px;
+  margin-right: 100px;
+}
+
+#hangoutContainer{
+  margin-left: 100px;
 }

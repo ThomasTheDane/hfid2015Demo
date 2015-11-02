@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  // Place JavaScript code here...
+<<<<<<< HEAD
   var peckCounter = 0;
   $('.peckBox').click(function(){
     peckCounter += 1;
@@ -7,7 +9,8 @@ $(document).ready(function() {
       'src', "http://pngimg.com/upload/pigeon_PNG3426.png"
     )
   });
-  // Place JavaScript code here...
+});
+=======
     $("#leoMessage").on("click", function(){
         $("#name").text("Learning Leo");
     })
@@ -28,5 +31,6 @@ var bootstrap_alert = function() {
 };
 
 bootstrap_alert.success = function(message) {
-    $('#alert_placeholder').html('<div class="alert alert-success" role="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>');
+    $('#alert_placeholder').html('<div class="alert alert-success"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>');
 };
+>>>>>>> ec2c53847cc13ea24d2e785372cef9d40acb49bd

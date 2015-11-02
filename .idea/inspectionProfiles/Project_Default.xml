@@ -6,6 +6,7 @@
       <option name="suppressedTasks">
         <set>
           <option value="Jade" />
+          <option value="SCSS" />
         </set>
       </option>
     </inspection_tool>
