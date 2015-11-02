@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+  var peckCounter = 0;
+  $('.peckBox').click(function(){
+    peckCounter += 1;
+    $(this).attr(
+      'src', "http://pngimg.com/upload/pigeon_PNG3426.png"
+    )
+  });
   // Place JavaScript code here...
     $("#leoMessage").on("click", function(){
         $("#name").text("Learning Leo");
