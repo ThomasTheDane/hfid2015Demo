@@ -1,12 +1,19 @@
 $(document).ready(function() {
+  $('#findPartnerButton').hide();
+  var topicChosen = false;
 
-  var peckCounter = 0;
   $('.peckBox').click(function(){
-    peckCounter += 1;
     $(this).attr(
       'src', "http://pngimg.com/upload/pigeon_PNG3426.png"
     )
   });
+  $('.topicSelector').click(function(){
+    $(this).attr(
+      'src', "https://upload.wikimedia.org/wikipedia/commons/b/bd/Checkmark_green.svg"
+    );
+    $('#findPartnerButton').slideDown();
+  });
+
   // Place JavaScript code here...
     $("#leoMessage").on("click", function(){
         $("#name").text("Learning Leo");

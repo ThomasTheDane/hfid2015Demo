@@ -1,4 +1,33 @@
 extends layout
 block content
-  | POST CHAT Y'ALL
-
+  .starter-template
+    center
+      h1
+        br
+        | Your chat with Winston has ended
+      h2
+        center
+          | We hope you've had a nice chat
+          br
+      p.lead
+        center
+          | Your chat lasted 14:20 minutes.
+          br
+          br
+      button.btn.btn-info.active.btn-lg(type='button',href='/profile') Find a New Partner
+    br
+    br
+    br
+    .row
+      .col-md-4
+      .col-md-5
+        p
+          | Want to stay in touch?                                 
+          button.btn.btn-success(type='button') Friend
+        p
+          | Did your partner violate terms of use?        
+          button.btn.btn-danger(type='button') Report
+        p
+          | Did you have an unpleasant experience?   
+          button.btn.btn-warning(type='button') Down Vote
+        br
