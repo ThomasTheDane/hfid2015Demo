@@ -17,13 +17,17 @@ $(document).ready(function() {
   // Place JavaScript code here...
     $("#leoMessage").on("click", function(){
         $("#name").text("Learning Leo");
-    })
+    });
     $("phoebeMessage").on("click", function(){
         $("#name").text("Philosophical Phoebe");
     });
     $("carlMessage").on("click", function(){
         $("#name").text("Cultural Carl");
     });
+
+  $("#findPartnerButton").click(function(){
+    setTimeout(function(){ alert("Hello"); }, 2000);
+  })
 });
 
 var sendMessage = function(){

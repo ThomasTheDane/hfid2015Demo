@@ -44,7 +44,16 @@ block content
         br
         img.topicSelector
       .col-md-2
-        a.btn.btn-block.btn-success#findPartnerButton(href='/prechat')
+        a.btn.btn-block.btn-success#findPartnerButton(type="button" data-toggle="modal" data-target="#loadingModal")
           | Find
           br
           | Partner
+
+
+  div.modal.fade#loadingModal(tabindex="-1" role="dialog" aria-labelledby="messageLabel")
+    div.modal-dialog(role="document")
+      div.modal-content
+        div.modal-body
+          h1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Finding Conversation Parner
+          img#loading(src='http://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif')
+
