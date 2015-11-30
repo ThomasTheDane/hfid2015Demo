@@ -11,32 +11,59 @@ block content
                 th Actions
         tbody
             tr
-                th Learning Leo
+                th 
+                    i.fa.fa-circle.text-success
+                    span Learning Leo
                 th
-                    button#leoMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
+                    a#leoMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
                         span.fa.fa-envelope(aria-hidden="true")
                     span &nbsp;
-                    button#leoVideo.btn.btn-primary(type="button")
+                    a#leoVideo.btn.btn-primary(type="button")
                         span.fa.fa-video-camera
             tr
-                th Cultural Carl
+                th 
+                    i.fa.fa-circle.text-danger
+                    span Cultural Carl
                 th
-                    button#carlMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
-                        span.fa.fa-envelope(aria-hidden="true")
-            tr
-                th Philosophical Phoebe
-                th
-                    button#phoebeMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
+                    a#carlMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
                         span.fa.fa-envelope(aria-hidden="true")
                     span &nbsp;
-                    button#phoebeVideo.btn.btn-primary(type="button")
+                    a#leoVideo.btn.disabled(type="button")
+                        span.fa.fa-video-camera
+            tr
+                th 
+                    i.fa.fa-circle.text-success
+                    span Philosophical Phoebe
+                th
+                    a#phoebeMessage.btn.btn-primary(type="button" data-toggle="modal" data-target="#messageModal")
+                        span.fa.fa-envelope(aria-hidden="true")
+                    span &nbsp;
+                    a#phoebeVideo.btn.btn-primary(type="button")
                         span.fa.fa-video-camera
             tr
                 th
-                    button#addFriend.btn.btn-default(type="button")
+                    a#addFriend.btn.btn-primary(type="button" data-toggle="modal" data-target="#addModal")
                         span.fa.fa-plus-circle
                 th.text-right
 
+    div.modal.fade#callModal(tabindex="-1" role="dialog" aria-labelledby="callModal")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h4.modal-title You are being called by Worldy Winston
+                .modal-footer
+                    a.btn.btn-success(href="prechat") Answer Call
+                    a.btn.btn-danger(data-dismiss="modal") Ignore Call
+    div.modal.fade#addModal(tabindex="-1" role="dialog" aria-labelledby="addModal")
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h4.modal-title Add a new friend
+                .modal-body
+                    input.form-control(placeholder="Sorry Not Implemented")
+                .modal-footer
+                    a.btn.btn-success(type="button" data-dismiss="modal") Add Friend (Not Implemented)
+                    a.btn.btn-danger(type="button" data-dismiss="modal") Cancel
     div.modal.fade#messageModal(tabindex="-1" role="dialog" aria-labelledby="messageLabel")
         div.modal-dialog(role="document")
             div.modal-content
@@ -49,3 +76,9 @@ block content
                 div.modal-footer
                     button.btn.btn-default(type="button" data-dismiss="modal") Close
                     button.btn.btn-primary(type="button" onclick="sendMessage()" data-dismiss="modal") Send Message
+
+block instructions
+    span Click
+    a#phoebeMessage(type="button" data-toggle="modal" data-target="#callModal")
+        span &nbsp;here&nbsp;
+    span to simulate a call
