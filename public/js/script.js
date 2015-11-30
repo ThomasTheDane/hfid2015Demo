@@ -120,6 +120,7 @@ var addToList = function(name) {
 
 }
 
+
 function search(ele) {
   if(event.keyCode == 13) {
     var code = stateToCode[ele.value];
@@ -135,6 +136,10 @@ function search(ele) {
   }
 }
 var map;
+var mapSvg;
+
+
+  
 function run() {
   $(".test").click(function() {
     var $item = $(this).closest("tr")   // Finds the closest row <tr> 
@@ -142,6 +147,7 @@ function run() {
       .text();         // Retrieves the text within <td>     // Outputs the answer
   });
   map = new Datamap({
+    id:"map-svg",
     element: document.getElementById('map'),
     geographyConfig: {
       popupOnHover: false, //disable the popup while hovering
@@ -150,9 +156,13 @@ function run() {
     },
     fills: {
       defaultFill: COLORS.unselected
-    }
-    ,
+    },
     done: function(datamap) {
+
+      datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
+      function redraw() {
+        datamap.svg.selectAll("g").attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+      }
 
       datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
 
@@ -173,6 +183,8 @@ function run() {
       });
 
     }});
+
+
   indicateHeatMap();
 
   var substringMatcher = function(strs) {
@@ -196,6 +208,8 @@ function run() {
       cb(matches);
     };
   };
+
+
 
 
 
