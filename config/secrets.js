@@ -21,7 +21,7 @@
 
 module.exports = {
 
-  db: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test',
+  db: process.env.MONGODB || process.env.MONGOLAB_URI || 'mongodb://heroku_m058qh9w:73p3s22acvcr5ndm5uokm5mr9f@ds053164.mongolab.com:53164/heroku_m058qh9w',
 
   sessionSecret: process.env.SESSION_SECRET || 'Your Session Secret goes here',
 
@@ -50,8 +50,8 @@ module.exports = {
   },
 
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '754220301289665',
-    clientSecret: process.env.FACEBOOK_SECRET || '41860e58c256a3d7ad8267d3c1939a4a',
+    clientID: process.env.FACEBOOK_ID || '1638827013071787',
+    clientSecret: process.env.FACEBOOK_SECRET || '043cb4559a4facbe739036f348e61e6f',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },

@@ -1,12 +1,19 @@
 $(document).ready(function() {
+  $('#findPartnerButton').hide();
+  var topicChosen = false;
 
-  var peckCounter = 0;
   $('.peckBox').click(function(){
-    peckCounter += 1;
     $(this).attr(
       'src', "https://cdn.vectorstock.com/i/composite/81,86/carrier-pigeon-with-letter-vector-328186.jpg"
     )
   });
+  $('.topicSelector').click(function(){
+    $(this).attr(
+      'src', "https://upload.wikimedia.org/wikipedia/commons/b/bd/Checkmark_green.svg"
+    );
+    $('#findPartnerButton').slideDown();
+  });
+
   // Place JavaScript code here...
     $("#leoMessage").on("click", function(){
         $("#name").text("Learning Leo");

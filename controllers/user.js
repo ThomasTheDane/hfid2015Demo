@@ -127,8 +127,8 @@ exports.postUpdateProfile = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', { msg: 'Profile information updated.' });
-      res.redirect('/account');
+      req.flash('success', { msg: 'Profile information updated, now find a partner!' });
+      res.redirect('/');
     });
   });
 };
@@ -339,7 +339,7 @@ exports.postForgot = function(req, res, next) {
       });
       var mailOptions = {
         to: user.email,
-        from: 'hackathon@starter.com',
+        from: 'ExpandingExchanges@hfid.com',
         subject: 'Reset your password on Hackathon Starter',
         text: 'You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
