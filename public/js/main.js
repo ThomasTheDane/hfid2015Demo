@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.peckBox').click(function(){
     peckCounter += 1;
     $(this).attr(
-      'src', "http://pngimg.com/upload/pigeon_PNG3426.png"
+      'src', "https://cdn.vectorstock.com/i/composite/81,86/carrier-pigeon-with-letter-vector-328186.jpg"
     )
   });
   // Place JavaScript code here...
