@@ -17,6 +17,16 @@ block content
           .input-append
             #the-basics
               input.typeahead(type='text', placeholder='Search for a Country', onkeydown='search(this)')
+        svg.bar(width='600')
+          g.legend(transform='translate(200,10)')
+            rect(width='18', height='18', style='fill: #EEEEEE; stroke: rgb(57, 59, 121);')
+            text(x='22', y='14') Inactive
+          g.legend(transform='translate(300,10)')
+            rect(width='18', height='18', style='fill: #4C4CFF; stroke: rgb(57, 59, 121);')
+            text(x='22', y='14') Active
+          g.legend(transform='translate(400,10)')
+            rect(width='18', height='18', style='fill: #B20000; stroke: rgb(57, 59, 121);')
+            text(x='22', y='14') Selected
     #bottom(style='float: left; position: relative; width: 100%; height: 85%;')
       #map(style='float: left; position: relative; width: 85%; height: 100%;')
       div(style='float: right; width: 15%; height: 100%; position:relative;')

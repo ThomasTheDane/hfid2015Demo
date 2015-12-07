@@ -1,11 +1,11 @@
 window.addEventListener("load",run,false);
 
 var COLORS = {
-  selected: "#156999",
+  selected: "#B20000",
   unselected: "#D3D3D3"
 }
 var activityObject = {};
-var states = ['Afghanistan','Angola','Albania','United Arab Emirates',
+var states = ['North America','Afghanistan','Angola','Albania','United Arab Emirates',
   'Argentina','Armenia','Antarctica','French Southern and Antarctic Lands',
   'Australia','Austria','Azerbaijan','Burundi','Belgium','Benin','Burkina Faso',
   'Bangladesh','Bulgaria','The Bahamas','Bosnia and Herzegovina','Belarus','Belize'
@@ -29,6 +29,7 @@ var states = ['Afghanistan','Angola','Albania','United Arab Emirates',
   'Taiwan','United Republic of Tanzania','Uganda','Ukraine','Uruguay','United States of America',
   'Uzbekistan','Venezuela','Vietnam','Vanuatu','West Bank','Yemen','South Africa','Zambia','Zimbabwe'];
 var selectedCountries = [];
+var regionMaps = {'North America': ['USA', 'CAN']};
 var stateToCode = {'Afghanistan':'AFG','Angola':'AGO','Albania':'ALB','United Arab Emirates':'ARE',
   'Argentina':'ARG','Armenia':'ARM','Antarctica':'ATA','French Southern and Antarctic Lands':'ATF',
   'Australia':'AUS','Austria':'AUT','Azerbaijan':'AZE','Burundi':'BDI','Belgium':'BEL','Benin':'BEN',
@@ -132,6 +133,19 @@ function search(ele) {
       console.log(ele);
       $('.typeahead').typeahead('setQuery', '');
     }
+    //If the selected is a region
+    if (regionMaps[ele.value] != undefined) {
+      var testObj = {};
+      for (var i = 0; i < regionMaps[ele.value].length; i++) {
+        var countryName = regionMaps[ele.value][i];
+        
+        testObj[stateToCode[countryName]] = COLORS.selected;
+        //Remove it from selected list
+        
+      }
+      map.updateChoropleth(testObj);
+      addToList(ele.value);
+    }
 
   }
 }
@@ -183,6 +197,7 @@ function run() {
       });
 
     }});
+
 
 
   indicateHeatMap();
