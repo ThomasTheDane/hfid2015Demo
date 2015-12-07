@@ -1,11 +1,11 @@
 window.addEventListener("load",run,false);
 
 var COLORS = {
-  selected: "#156999",
+  selected: "#B20000",
   unselected: "#D3D3D3"
 }
 var activityObject = {};
-var states = ['Afghanistan','Angola','Albania','United Arab Emirates',
+var states = ['North America','Afghanistan','Angola','Albania','United Arab Emirates',
   'Argentina','Armenia','Antarctica','French Southern and Antarctic Lands',
   'Australia','Austria','Azerbaijan','Burundi','Belgium','Benin','Burkina Faso',
   'Bangladesh','Bulgaria','The Bahamas','Bosnia and Herzegovina','Belarus','Belize'
@@ -29,6 +29,7 @@ var states = ['Afghanistan','Angola','Albania','United Arab Emirates',
   'Taiwan','United Republic of Tanzania','Uganda','Ukraine','Uruguay','United States of America',
   'Uzbekistan','Venezuela','Vietnam','Vanuatu','West Bank','Yemen','South Africa','Zambia','Zimbabwe'];
 var selectedCountries = [];
+var regionMaps = {'North America': ['USA', 'CAN']};
 var stateToCode = {'Afghanistan':'AFG','Angola':'AGO','Albania':'ALB','United Arab Emirates':'ARE',
   'Argentina':'ARG','Armenia':'ARM','Antarctica':'ATA','French Southern and Antarctic Lands':'ATF',
   'Australia':'AUS','Austria':'AUT','Azerbaijan':'AZE','Burundi':'BDI','Belgium':'BEL','Benin':'BEN',
@@ -120,6 +121,7 @@ var addToList = function(name) {
 
 }
 
+
 function search(ele) {
   if(event.keyCode == 13) {
     var code = stateToCode[ele.value];
@@ -131,10 +133,27 @@ function search(ele) {
       console.log(ele);
       $('.typeahead').typeahead('setQuery', '');
     }
+    //If the selected is a region
+    if (regionMaps[ele.value] != undefined) {
+      var testObj = {};
+      for (var i = 0; i < regionMaps[ele.value].length; i++) {
+        var countryName = regionMaps[ele.value][i];
+        
+        testObj[stateToCode[countryName]] = COLORS.selected;
+        //Remove it from selected list
+        
+      }
+      map.updateChoropleth(testObj);
+      addToList(ele.value);
+    }
 
   }
 }
 var map;
+var mapSvg;
+
+
+  
 function run() {
   $(".test").click(function() {
     var $item = $(this).closest("tr")   // Finds the closest row <tr> 
@@ -142,6 +161,7 @@ function run() {
       .text();         // Retrieves the text within <td>     // Outputs the answer
   });
   map = new Datamap({
+    id:"map-svg",
     element: document.getElementById('map'),
     geographyConfig: {
       popupOnHover: false, //disable the popup while hovering
@@ -150,9 +170,13 @@ function run() {
     },
     fills: {
       defaultFill: COLORS.unselected
-    }
-    ,
+    },
     done: function(datamap) {
+
+      datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
+      function redraw() {
+        datamap.svg.selectAll("g").attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+      }
 
       datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
 
@@ -173,6 +197,9 @@ function run() {
       });
 
     }});
+
+
+
   indicateHeatMap();
 
   var substringMatcher = function(strs) {
@@ -196,6 +223,8 @@ function run() {
       cb(matches);
     };
   };
+
+
 
 
 
