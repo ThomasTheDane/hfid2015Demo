@@ -4,33 +4,37 @@ block content
   .page-header
     h3 Profile Information
 
-  form.form-horizontal(action='/account/profile', method='POST')
+  form.form-horizontal(id='signup-form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7
-        input.form-control(type='email', name='email', id='email', value='#{user.email}')
+        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus value="you@the.best")
+      .col-sm-7
+        input.form-control(type='hidden', name='password', id='password', placeholder='Password' value="bob")
+      .col-sm-7
+        input.form-control(type='hidden', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password' value="bob")
     .form-group
       label.col-sm-3.control-label(for='name') Name
       .col-sm-7
-        input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+        input.form-control(type='text', name='name', id='name', value='')
     .form-group
       label.col-sm-3.control-label(for='location') Location
       .col-sm-7
-        input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+        input.form-control(type='text', name='location', id='location', value='')
     .form-group
       label.col-sm-3.control-label(for='website') Background
       .col-sm-7
-        input.form-control(type='textarea', name='website', id='website', value='#{user.profile.website}')
+        input.form-control(type='textarea', name='website', id='website', value='')
+
     //.form-group
     //  label.col-sm-3.control-label(for='gravatar') Gravatar
     //  .col-sm-4
     //    img(src="#{user.gravatar()}", class='profile', width='100', height='100')
-    .form-group
-      .col-sm-offset-3.col-sm-4
-        button.btn.btn.btn-primary(type='submit')
-          i.fa.fa-pencilr
-          | Update Profile
+  .col-sm-offset-3.col-sm-4
+    a.btn.btn.btn-primary(href='/findchat')
+      i.fa.fa-pencilr
+      | Find Conversation Partner
   //
   //.page-header
   //  h3 Change Password
